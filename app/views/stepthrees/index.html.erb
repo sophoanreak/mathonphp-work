@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Stepthrees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Definition</th>
+      <th>Example</th>
+      <th>Code</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stepthrees.each do |stepthree| %>
+      <tr>
+        <td><%= link_to stepthree.title, stepthree_path(stepthree) %></td>
+        <td><%= stepthree.definition %></td>
+        <td><%= stepthree.example %></td>
+        <td><%= stepthree.code %></td>
+        <td><%= link_to 'Edit', edit_stepthree_path(stepthree) %></td>
+        <td><%= link_to 'Destroy', stepthree_path(stepthree), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stepthree', new_steptwo_stepthree_path(@steptwo) %>
+

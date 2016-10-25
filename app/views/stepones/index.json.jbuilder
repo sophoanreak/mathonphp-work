@@ -1,0 +1,1 @@
+json.array! @stepones, partial: 'stepones/stepone', as: :stepone

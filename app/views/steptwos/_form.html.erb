@@ -1,0 +1,21 @@
+<%= form_for([@stepone, @steptwo]) do |f| %>
+  <% if @steptwo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@steptwo.errors.count, "error") %> prohibited this steptwo from being saved:</h2>
+
+      <ul>
+      <% @steptwo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :list %><br>
+    <%= f.text_field :list %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

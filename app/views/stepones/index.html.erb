@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Stepones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>List</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stepones.each do |stepone| %>
+      <tr>
+        <td><%= stepone.list %></td>
+        <td><%= link_to 'Show', stepone %></td>
+        <td><%= link_to 'Edit', edit_stepone_path(stepone) %></td>
+        <td><%= link_to 'Destroy', stepone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stepone', new_mainpage_stepone_path %>

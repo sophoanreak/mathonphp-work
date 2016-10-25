@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <% if false %>
+  <div class="col s2">
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @stepthrees.each do |stepthree| %>
+          <tr>
+            <td><%= link_to stepthree.title %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <% end %>
+  <div class="col s12">
+    <table>
+      <thead>
+        <tr>
+          <th>Definition</th>
+          <th>Example</th>
+          <th>Code</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+          <tr>
+            <td><%= @stepthree.definition %></td>
+            <td><%= @stepthree.example %></td>
+            <td><%= @stepthree.code %></td>
+            <td><%= link_to 'Edit', edit_stepthree_path(@stepthree) %></td>
+            <td><%= link_to 'Destroy', stepthree_path(@stepthree), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%= link_to 'Back', steptwo_stepthrees_path(@stepthree.steptwo) %>

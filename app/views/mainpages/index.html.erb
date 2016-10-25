@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>HOME PAGE</h1>
+
+<table class="striped">
+  <thead>
+    <tr>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mainpages.each do |mainpage| %>
+      <tr>
+        <td><%= link_to mainpage.mathlist, mainpage %></td>
+        <td><%= link_to 'Edit', edit_mainpage_path(mainpage) %></td>
+        <td><%= link_to 'Destroy', mainpage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%= link_to 'ALL', stepthree_path('1'), method: :get, :class => 'waves-effect waves-light btn' %>
+<%= link_to 'New Topic', new_mainpage_path, :class => 'waves-effect waves-light btn' %>

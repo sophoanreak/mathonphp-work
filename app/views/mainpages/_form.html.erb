@@ -1,0 +1,21 @@
+<%= form_for(@mainpage, :html => { multipart: true }) do |f| %>
+  <% if @mainpage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mainpage.errors.count, "error") %> prohibited this mainpage from being saved:</h2>
+
+      <ul>
+      <% @mainpage.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :mathlist %><br>
+    <%= f.text_field :mathlist %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: 'waves-effect waves-light btn' %>
+  </div>
+<% end %><br>

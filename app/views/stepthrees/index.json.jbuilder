@@ -1,0 +1,1 @@
+json.array! @stepthrees, partial: 'stepthrees/stepthree', as: :stepthree

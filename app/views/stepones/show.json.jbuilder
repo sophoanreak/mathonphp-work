@@ -1,0 +1,1 @@
+json.partial! "stepones/stepone", stepone: @stepone

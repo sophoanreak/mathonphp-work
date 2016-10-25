@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mathlist:</strong>
+  <%= @mainpage.mathlist %>
+</p>
+
+<table class="striped">
+  <thead>
+    <tr>
+    </tr>
+  </thead>
+
+  <tbody>
+	<% @stepones.each do |stepone| %>
+		<tr>
+			<td><%= link_to stepone.list, stepone_steptwos_path(stepone) %></td>
+			<td><%= link_to 'Edit', edit_stepone_path(stepone) %></td>
+	        <td><%= link_to 'Destroy', stepone_path(stepone), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	    </tr>
+	<% end %>
+  </tbody>
+</table>
+<div class="row">
+	<div class="col s11">
+		<%= link_to "New Topic", new_mainpage_stepone_path(@mainpage), :class => 'waves-effect waves-light btn' %>
+	</div>
+	<div class="col s1">
+		<%= link_to 'Back', mainpages_path, :class => 'waves-effect waves-light btn' %>
+	</div>
+</div>

@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Steptwos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>List</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @steptwos.each do |steptwo| %>
+      <tr>
+        <td><%= link_to steptwo.list, steptwo_stepthrees_path(steptwo) %></td>
+        <td><%= link_to 'Edit', edit_steptwo_path(steptwo) %></td>
+        <td><%= link_to 'Destroy', steptwo_path(steptwo), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Steptwo', new_stepone_steptwo_path(@stepone) %>
